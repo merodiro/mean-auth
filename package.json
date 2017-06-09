@@ -1,0 +1,21 @@
+{
+  "name": "mean-social",
+  "version": "1.0.0",
+  "description": "mean stack authentication app",
+  "main": "app.js",
+  "author": "Amr",
+  "license": "MIT",
+  "scripts": {
+    "start": "node app"
+  },
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.17.2",
+    "cors": "^2.8.3",
+    "express": "^4.15.3",
+    "jsonwebtoken": "^7.4.1",
+    "mongoose": "^4.10.5",
+    "passport": "^0.3.2",
+    "passport-jwt": "^2.2.1"
+  }
+}
