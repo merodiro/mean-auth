@@ -30,7 +30,7 @@ export class RegisterComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.createForm()
+    this.createForm();
   }
 
   createForm(): void {
@@ -41,19 +41,19 @@ export class RegisterComponent implements OnInit {
       'password': [null, Validators.required]
     });
   }
-
+  
   register({ value, valid }: { value: User, valid: boolean }) {
     if(!valid) {
-      this.flashMessages.show('Please fill all fields', { cssClass: 'alert-danger', timeOut: 3000 })
+      this.flashMessages.show('Please fill all fields', { cssClass: 'alert-danger', timeOut: 3000 });
       return false;
     }
 
     this.authService.register(value).subscribe(res => {
       if(res.success) {
-        this.flashMessages.show('you are now registered and can login', { cssClass: 'alert-success', timeOut: 3000 })
-        this.router.navigate(['/login'])
+        this.flashMessages.show('you are now registered and can login', { cssClass: 'alert-success', timeOut: 3000 });
+        this.router.navigate(['/login']);
       } else {
-        this.flashMessages.show('SOmething went wrong', { cssClass: 'alert-danger', timeOut: 3000 })
+        this.flashMessages.show(res.msg , { cssClass: 'alert-danger', timeOut: 3000 });
       }
     });
   }

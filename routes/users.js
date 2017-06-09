@@ -14,12 +14,18 @@ router.post('/register', (req, res, next) => {
         password: req.body.password,
     })
     User.addUser(newUser, (err, user) => {
-        console.error(err)
         if(err) {
-            res.json({
-                success: false,
-                msg: 'failed to register user'
-            })
+            if (err.code === 11000) {
+                res.json({
+                    success: false,
+                    msg: 'username or email already exist'
+                })
+            } else {
+                res.json({
+                    success: false,
+                    msg: 'failed to register user'
+                })
+            }
         } else {
             res.json({
                 success: true,
