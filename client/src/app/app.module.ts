@@ -14,6 +14,7 @@ import { HomeComponent } from './home/home.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { ProfileComponent } from './profile/profile.component';
 
+import { AuthService } from './auth.service'
 
 
 @NgModule({
@@ -34,7 +35,7 @@ import { ProfileComponent } from './profile/profile.component';
     AppRoutingModule,
     FlashMessagesModule
   ],
-  providers: [],
+  providers: [AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
