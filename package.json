@@ -6,7 +6,8 @@
   "author": "Amr",
   "license": "MIT",
   "scripts": {
-    "start": "node app"
+    "start": "node app",
+    "build": "cd client && ng build"
   },
   "dependencies": {
     "bcryptjs": "^2.4.3",
