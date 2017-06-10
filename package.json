@@ -1,5 +1,5 @@
 {
-  "name": "mean-social",
+  "name": "mean-auth",
   "version": "1.0.0",
   "description": "mean stack authentication app",
   "main": "app.js",
@@ -7,7 +7,7 @@
   "license": "MIT",
   "scripts": {
     "start": "node app",
-    "build": "cd client && ng build"
+    "build:client": "cd client && ng build --prod"
   },
   "dependencies": {
     "bcryptjs": "^2.4.3",

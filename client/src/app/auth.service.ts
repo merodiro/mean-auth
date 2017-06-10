@@ -6,21 +6,20 @@ import 'rxjs/add/operator/map';
 @Injectable()
 export class AuthService {
   authToken: any;
-  user: any;
 
   constructor(private http: Http) { }
 
   register(user) {
     let headers = new Headers();
     headers.append('Content-Type', 'application/json');
-    return this.http.post('http://localhost:3000/users/register', user, { headers })
+    return this.http.post('/api/users/register', user, { headers })
       .map(res => res.json());
   }
 
   authenticate(user) {
     let headers = new Headers();
     headers.append('Content-Type', 'application/json');
-    return this.http.post('http://localhost:3000/users/authenticate', user, { headers })
+    return this.http.post('/api/users/authenticate', user, { headers })
       .map(res => res.json());
   }
 
@@ -28,15 +27,13 @@ export class AuthService {
     let headers = new Headers();
     this.loadToken();
     headers.append('Authorization', this.authToken);
-    return this.http.get('http://localhost:3000/users/profile', { headers })
+    return this.http.get('/api/users/profile', { headers })
       .map(res => res.json());
   }
 
-  storeUser(token, user) {
+  storeToken(token) {
     localStorage.setItem('token', token);
-    localStorage.setItem('user', JSON.stringify(user));
     this.authToken = token;
-    this.user = user;
   }
 
   loggedIn() {
@@ -45,7 +42,6 @@ export class AuthService {
 
   logout() {
     this.authToken = null;
-    this.user = null;
     localStorage.clear();
   }
 

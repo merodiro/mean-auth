@@ -13,8 +13,8 @@ export class NavbarComponent implements OnInit {
   public isCollapsed: Boolean = true;
 
   constructor(
+    public authService: AuthService,
     private flashMessages: FlashMessagesService,
-    private authService: AuthService,
     private router: Router
   ) { }
 

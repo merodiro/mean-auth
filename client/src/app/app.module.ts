@@ -16,6 +16,7 @@ import { ProfileComponent } from './profile/profile.component';
 
 import { AuthService } from './auth.service'
 import { AuthGuard } from './auth-guard';
+import { PublicGuard } from './public-guard';
 
 
 @NgModule({
@@ -36,7 +37,7 @@ import { AuthGuard } from './auth-guard';
     AppRoutingModule,
     FlashMessagesModule
   ],
-  providers: [AuthService, AuthGuard],
+  providers: [AuthService, AuthGuard, PublicGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -27,9 +27,14 @@ router.post('/register', (req, res, next) => {
                 })
             }
         } else {
+            const token = jwt.sign(user, config.secret, {
+                expiresIn: 6048000
+            })
+
             res.json({
                 success: true,
-                msg: 'User registered successfully'
+                msg: 'User registered successfully',
+                token: 'JWT ' + token
             })
         }
     })
@@ -60,13 +65,7 @@ router.post('/authenticate', (req, res, next) => {
 
                 res.json({
                     success: true,
-                    token: 'JWT ' + token,
-                    user: {
-                        id: user._id,
-                        name: user.name,
-                        username: user.username,
-                        email: user.email
-                    }
+                    token: 'JWT ' + token
                 })
             } else {
                 return res.json({
