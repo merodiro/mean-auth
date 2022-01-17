@@ -7,16 +7,20 @@
   "license": "MIT",
   "scripts": {
     "start": "node app",
-    "build:client": "cd client && ng build --prod"
+    "build:client": "cd client && ng build --prod",
+    "prepublish": "npm run snyk-protect",
+    "snyk-protect": "snyk-protect"
   },
   "dependencies": {
     "bcryptjs": "^2.4.3",
-    "body-parser": "^1.17.2",
+    "body-parser": "^1.18.2",
     "cors": "^2.8.3",
-    "express": "^4.15.3",
-    "jsonwebtoken": "^7.4.1",
-    "mongoose": "^4.10.5",
+    "express": "^4.16.0",
+    "jsonwebtoken": "^8.0.0",
+    "mongoose": "^5.13.9",
     "passport": "^0.3.2",
-    "passport-jwt": "^2.2.1"
-  }
+    "passport-jwt": "^2.2.1",
+    "@snyk/protect": "latest"
+  },
+  "snyk": true
 }
