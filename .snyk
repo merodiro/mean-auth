@@ -1,0 +1,21 @@
+# Snyk (https://snyk.io) policy file, patches or ignores known vulnerabilities.
+version: v1.22.1
+ignore: {}
+# patches apply the minimum changes required to fix a vulnerability
+patch:
+  'npm:debug:20170905':
+    - express > finalhandler > debug:
+        patched: '2022-01-17T14:29:55.261Z'
+  'npm:hoek:20180212':
+    - passport-jwt > jsonwebtoken > joi > hoek:
+        patched: '2022-01-17T14:29:55.261Z'
+    - passport-jwt > jsonwebtoken > joi > topo > hoek:
+        patched: '2022-01-17T14:29:55.261Z'
+  SNYK-JS-LODASH-567746:
+    - mongoose > async > lodash:
+        patched: '2022-01-17T14:29:55.261Z'
+  'npm:moment:20170905':
+    - jsonwebtoken > joi > moment:
+        patched: '2022-01-17T14:29:55.261Z'
+    - passport-jwt > jsonwebtoken > joi > moment:
+        patched: '2022-01-17T14:29:55.261Z'
